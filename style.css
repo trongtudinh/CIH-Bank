@@ -65,10 +65,12 @@ button {
   font-weight: 600;
   border: none;
   height: 55px;
+  width: 100%;
   border-radius: 5px;
   background-color: #e95416;
   color: white;
   cursor: pointer;
+  margin-top: 5px;
   transition: background-color 0.3s ease;
 }
 
@@ -409,4 +411,13 @@ button:disabled {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#country-list.hide-dial .dial {
+  display: none;
+}
+
+.country-list-step-phone {
+  max-height: calc(100dvh - 175px) !important;
+  overflow-y: auto;
 }

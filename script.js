@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
     popup.classList.remove("hidden");
     setTimeout(() => popup.classList.add("active"), 10);
 
+    countryList.classList.add("hide-dial");
+
     countryList.querySelectorAll(".country-item").forEach((item) => {
       const nameEl = item.querySelector(".country-item-name");
       const flagEl = item.querySelector("img");
@@ -129,6 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       popup.classList.remove("hidden");
       setTimeout(() => popup.classList.add("active"), 10);
+      countryList.classList.remove("hide-dial");
     }
   });
 
