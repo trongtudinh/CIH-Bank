@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onboarding</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="app">
+        <div id="country-popup" class="popup hidden">
+            <div class="close-popup">
+                <img class="close-popup-icon" src="assets/icons/close-icon.svg" alt="">
+            </div>
+            <div class="title-popup">CHOISISSEZ VOTRE PAYS</div>
+            <div class="des-popup">Sélectionner le pays de votre banque</div>
+            <div style="position: relative; margin-top: 60px; margin-bottom: 20px;">
+                <input type="text" id="country-search" />
+                <img class="search-popup-icon" src="assets/icons/search-icon.svg" alt="">
+            </div>
+            <div id="country-list" class="popup-list"></div>
+        </div>
+
+        <section id="step-1" class="step active">
+            <h2 class="title-step1">Information Client</h2>
+            <p class="des-step1">Indiquez votre numéro de mobile</p>
+            <div class="phone-input">
+                <div id="country-picker" class="dial-code-select">
+                    <img id="selected-flag" src="assets/icons/fr.svg" alt="FR">
+                    <span id="selected-dial-code">+212</span>
+                    <span class="arrow"><img class="icon-dropdown" src="assets/icons/icon-drop-down.svg" alt=""></span>
+                </div>
+                <input type="tel" id="phone-number" />
+            </div>
+            <p id="phone-error" class="error hidden">Message d'erreur</p>
+            <div class="des-lock"><img src="assets/icons/lock-icon.svg" alt="">
+                <p class="des-step1-2">Vos données restent strictement confidentielles</p>
+            </div>
+            <button id="btn-next-1">Suivant</button>
+        </section>
+
+
+        <section id="step-2" class="step">
+            <h2 class="title-step1">Choisir votre pays</h2>
+            <p class="des-step1">Sélectionner le pays de votre banque</p>
+            <div id="country-picker-step2" class="dial-code-select-step2">
+                <div class="placeholder-step2" id="placeholder-step2">
+                    <span class="placeholder-text">- Pays -</span>
+                </div>
+                <div class="icon-dropdown-step2">
+                    <img class="icon-dropdown" src="assets/icons/icon-drop-down.svg" alt="" />
+                </div>
+            </div>
+            <div class="des-lock"><img src="assets/icons/lock-icon.svg" alt="">
+                <p class="des-step1-2">Vos données restent strictement confidentielles</p>
+            </div>
+            <button id="btn-next-2">Confirmer</button>
+        </section>
+
+
+        <section id="step-3" class="step">
+            <h2 class="title-step1">Confirmation</h2>
+            <div class="des-step3">
+                <img class="icon-step3" src="assets/icons/icon-checked.svg" alt="">
+            </div>
+            <div class="more-info">
+                <div class="more-info-1">Félicitation, Khalil</div>
+                <div class="more-info-2">Votre compte bancaire a bien été agrégé</div>
+            </div>
+        </section>
+
+        <section id="step-4" class="step">
+            <h2 class="title-step1">Confirmation</h2>
+            <div class="des-step3">
+                <div class="des-step3-icon">
+                    <img class="icon-step3" src="assets/icons/icon-x.svg" alt="">
+                    <img class="icon-step3-4" src="assets/icons/icon-x-center.svg" alt="">
+                </div>
+            </div>
+            <div class="more-info">
+                <div class="more-info-1">Code Error</div>
+                <div class="more-info-2">Message d’erreur</div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Bakbak One, sans-serif;
+}
+
+body {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  font-family: Bakbak One, sans-serif;
+  min-height: 100dvh;
+}
+
+#app {
+  width: 100%;
+  padding: 0 24px;
+}
+
+.container {
+  background-color: #fff;
+  width: 360px;
+  border-radius: 8px;
+  padding: 30px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.step {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.step.active {
+  display: flex;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-size: 14px;
+  text-align: center;
+  color: #666;
+}
+
+select,
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+button {
+  padding: 12px;
+  font-size: 22px;
+  font-weight: 600;
+  border: none;
+  height: 55px;
+  border-radius: 5px;
+  background-color: #e95416;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d94f1d;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  background-color: #ffe4e4;
+  color: #df6a6a;
+  font-size: 13px;
+  border-radius: 5px;
+  border: 1px solid #ffbfbf;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transform: translateY(-25px);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.confirm-check {
+  font-size: 50px;
+  color: green;
+  text-align: center;
+}
+
+.confirm-message {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.country-preview {
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+}
+
+.custom-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.custom-select img {
+  width: 20px;
+  height: 15px;
+}
+
+.popup {
+  position: fixed;
+  background: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 1000;
+  padding: 85px 0 0;
+
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+}
+
+.title-popup {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+  width: 100%;
+}
+
+.des-popup {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  color: #999999;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.popup.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+#country-search {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  height: 55px;
+  margin: 0 25px;
+  font-size: 18px;
+  width: calc(100% - 50px);
+}
+
+.search-popup-icon {
+  position: absolute;
+  top: 50%;
+  right: 45px;
+  transform: translateY(-50%);
+  height: 21px;
+  width: 21px;
+}
+
+.country-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 25px;
+  height: 65px;
+  cursor: pointer;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.country-item:hover {
+  background-color: #f0f0f0;
+}
+
+.phone-input {
+  display: flex;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: white;
+  margin: 40px 0;
+  height: 55px;
+}
+
+.country-item-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.country-item-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.dial-code-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #e5e5e5;
+  padding: 8px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dial-code-select img {
+  width: 32px;
+  height: auto;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+#selected-dial-code {
+  font-weight: 500;
+  font-size: 18px;
+  color: #202b30;
+}
+
+.arrow {
+  font-size: 12px;
+  color: #333;
+}
+
+#phone-number {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  font-size: 18px;
+  outline: none;
+  background-color: white;
+  letter-spacing: 2px;
+}
+
+#phone-number:focus {
+  outline: none;
+}
+
+.icon-dropdown {
+  height: 7.8px !important;
+  width: 13.8px !important;
+}
+
+.title-step1 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.des-step1 {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  color: #999999;
+}
+
+.des-lock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 5px;
+}
+
+.des-step1-2 {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  color: #999999;
+}
+
+.close-popup {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.close-popup-icon {
+  width: 18.5px;
+  height: 18.5px;
+  object-fit: cover;
+}
+
+#country-list {
+  max-height: calc(100dvh - 275px);
+  overflow-y: auto;
+}
+
+.dial-code-select-step2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  height: 55px;
+  position: relative;
+  margin: 40px 0;
+}
+
+.placeholder-step2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #999999;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.country-name-step2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.icon-dropdown-step2 {
+  position: absolute;
+  right: 23px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.des-step3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0 20px;
+}
+
+.icon-step3 {
+  width: 68.73px;
+  height: 68.73px;
+}
+
+.more-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.more-info-1 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #666666;
+}
+
+.more-info-2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #999999;
+  margin-top: 8px;
+}
+
+.des-step3-icon {
+  position: relative;
+  width: 68.73px;
+  height: 68.73px;
+}
+
+.icon-step3-4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
