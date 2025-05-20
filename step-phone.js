@@ -98,7 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
       phoneError.classList.add("hidden");
       const dialCode = countryPicker.dataset.dialCode || "";
       sessionStorage.setItem("selectedPhone", `${dialCode} ${phone}`);
-      window.location.href = "step2.html";
     }
   });
 

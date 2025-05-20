@@ -91,10 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
   countryForm.addEventListener("submit", (e) => {
     e.preventDefault();
     if (!selectedCountry) {
-      window.location.href = "step4.html";
     } else {
       sessionStorage.setItem("selectedCountry", selectedCountry);
-      window.location.href = "step3.html";
     }
   });
 
