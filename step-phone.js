@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updatePhoneButtonState() {
     const phone = phoneInput.value.trim();
-    const isValid = !!phone;
+    const isValid = /^[0-9]{6,}$/.test(phone); 
     btnNext1.disabled = !isValid;
   }
 
