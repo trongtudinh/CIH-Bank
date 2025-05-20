@@ -23,7 +23,7 @@
   { "code": "pt", "name": "Portugal", "flag": "pt.svg", "dial_code": "351" },
   { "code": "cz", "name": "République tchèque", "flag": "cz.svg", "dial_code": "420" },
   { "code": "ro", "name": "Roumanie", "flag": "ro.svg", "dial_code": "40" },
-  { "code": "sk", "name": "Slovaquie", "flag": "sk.svg", "dial_code": "421" },
+  { "code": "sk", "name": "Slovaquie", "flag": "rs.svg", "dial_code": "421" },
   { "code": "si", "name": "Slovénie", "flag": "si.svg", "dial_code": "386" },
   { "code": "se", "name": "Suède", "flag": "se.svg", "dial_code": "46" }
 ]
