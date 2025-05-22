@@ -12,10 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const phoneForm = document.getElementById("phone-form");
 
   let countries = [];
+  let phoneRegexMap = {};
 
   function updatePhoneButtonState() {
     const phone = phoneInput.value.trim();
-    const isValid = /^[0-9]{6,}$/.test(phone); 
+    const isValid = /^[0-9]{6,}$/.test(phone);
     btnNext1.disabled = !isValid;
   }
 
@@ -77,6 +78,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         countryList.appendChild(item);
       });
+
+      const defaultCountry = data.find((c) => c.code === "fr");
+      if (defaultCountry) {
+        selectedFlag.src = `assets/icons/${defaultCountry.flag}`;
+        selectedDialCode.textContent = `+${defaultCountry.dial_code}`;
+        countryPicker.dataset.dialCode = defaultCountry.dial_code;
+      }
+    });
+
+  fetch("phone_regex.json")
+    .then((res) => res.json())
+    .then((data) => {
+      for (const dialCode in data) {
+        phoneRegexMap[dialCode] = new RegExp(data[dialCode]);
+      }
     });
 
   countryPicker.addEventListener("click", () => {
@@ -92,12 +108,14 @@ document.addEventListener("DOMContentLoaded", () => {
   phoneForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const phone = phoneInput.value.trim();
-    if (!/^[0-9]{6,15}$/.test(phone)) {
+    const dialCode = countryPicker.dataset.dialCode || "";
+
+    const regex = phoneRegexMap[dialCode];
+    if (!regex || !regex.test(phone)) {
       phoneError.classList.remove("hidden");
     } else {
       phoneError.classList.add("hidden");
-      const dialCode = countryPicker.dataset.dialCode || "";
-      sessionStorage.setItem("selectedPhone", `${dialCode} ${phone}`);
+      sessionStorage.setItem("selectedPhone", `${dialCode}${phone}`);
     }
   });
 
