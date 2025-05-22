@@ -16,7 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updatePhoneButtonState() {
     const phone = phoneInput.value.trim();
-    const isValid = /^[0-9]{6,}$/.test(phone);
+    const dialCode = countryPicker.dataset.dialCode || "";
+
+    const regex = phoneRegexMap[dialCode];
+    const isValid = regex.test(phone);
     btnNext1.disabled = !isValid;
   }
 
