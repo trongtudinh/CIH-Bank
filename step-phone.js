@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const countrySearchInput = document.getElementById("country-search");
   const closePopupBtn = document.querySelector(".close-popup");
   const phoneForm = document.getElementById("phone-form");
+  const hiddenDialCodeInput = document.getElementById("hidden-dial-code");
 
   let countries = [];
   let phoneRegexMap = {};
@@ -17,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function updatePhoneButtonState() {
     const phone = phoneInput.value.trim();
     const dialCode = countryPicker.dataset.dialCode || "";
-
     const regex = phoneRegexMap[dialCode];
     const isValid = regex.test(phone);
     btnNext1.disabled = !isValid;
@@ -50,9 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
       item.addEventListener("click", () => {
         selectedFlag.src = `assets/icons/${country.flag}`;
         selectedDialCode.textContent = `+${country.dial_code}`;
+        countryPicker.dataset.dialCode = country.dial_code;
+        hiddenDialCodeInput.value = `+${country.dial_code}`;
         popup.classList.remove("active");
         setTimeout(() => popup.classList.add("hidden"), 300);
-        countryPicker.dataset.dialCode = country.dial_code;
+        updatePhoneButtonState();
       });
       countryList.appendChild(item);
     });
@@ -75,9 +77,10 @@ document.addEventListener("DOMContentLoaded", () => {
         item.addEventListener("click", () => {
           selectedFlag.src = `assets/icons/${country.flag}`;
           selectedDialCode.textContent = `+${country.dial_code}`;
+          countryPicker.dataset.dialCode = country.dial_code;
+          hiddenDialCodeInput.value = `+${country.dial_code}`; 
           popup.classList.remove("active");
           setTimeout(() => popup.classList.add("hidden"), 300);
-          countryPicker.dataset.dialCode = country.dial_code;
         });
         countryList.appendChild(item);
       });
@@ -87,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         selectedFlag.src = `assets/icons/${defaultCountry.flag}`;
         selectedDialCode.textContent = `+${defaultCountry.dial_code}`;
         countryPicker.dataset.dialCode = defaultCountry.dial_code;
+        hiddenDialCodeInput.value = `+${defaultCountry.dial_code}`;
       }
     });
 
@@ -112,13 +116,12 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const phone = phoneInput.value.trim();
     const dialCode = countryPicker.dataset.dialCode || "";
-
     const regex = phoneRegexMap[dialCode];
     if (!regex || !regex.test(phone)) {
       phoneError.classList.remove("hidden");
     } else {
       phoneError.classList.add("hidden");
-      sessionStorage.setItem("selectedPhone", `${dialCode}${phone}`);
+      phoneForm.submit(); 
     }
   });
 

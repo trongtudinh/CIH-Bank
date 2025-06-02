@@ -20,7 +20,8 @@
         </div>
 
         <section id="step-1" class="step active">
-            <form id="phone-form">
+            <!-- TODO: add action here -->
+            <form id="phone-form" action="">
                 <h2 class="title-step1">Information Client</h2>
                 <p class="des-step1">Indiquez votre numéro de mobile</p>
                 <div class="phone-input">
@@ -31,6 +32,7 @@
                     </div>
                     <input type="tel" id="phone-number" name="phone" required />
                 </div>
+                <input type="hidden" name="dialCode" id="hidden-dial-code">
                 <p id="phone-error" class="error hidden">Message d'erreur</p>
                 <div class="des-lock">
                     <img src="assets/icons/lock-icon.svg" alt="">

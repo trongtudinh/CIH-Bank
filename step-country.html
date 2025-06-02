@@ -22,7 +22,8 @@
         </div>
 
         <section id="step-2" class="step active">
-            <form id="country-form">
+            <!-- TODO: add action here -->
+            <form id="country-form" action="">
                 <h2 class="title-step1">Choisir votre pays</h2>
                 <p class="des-step1">Sélectionner le pays de votre banque</p>
                 <div id="country-picker-step2" class="dial-code-select-step2">
@@ -33,6 +34,7 @@
                         <img class="icon-dropdown" src="assets/icons/icon-drop-down.svg" alt="" />
                     </div>
                 </div>
+                <input type="hidden" name="selectedCountry" id="hidden-country">
                 <div class="des-lock">
                     <img src="assets/icons/lock-icon.svg" alt="">
                     <p class="des-step1-2">Vos données restent strictement confidentielles</p>

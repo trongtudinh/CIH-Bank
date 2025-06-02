@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const placeholderStep2 = countryPickerStep2.querySelector(".placeholder-step2");
   const btnNext2 = document.getElementById("btn-next-2");
   const countryForm = document.getElementById("country-form");
+  const hiddenCountryInput = document.getElementById("hidden-country");
 
   let countries = [];
   let selectedCountry = null;
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <img src="${flagSrc}" alt="${flagAlt}" class="flag-icon" />
           <span class="country-name-step2">${selectedCountry}</span>
         `;
+        hiddenCountryInput.value = selectedCountry;
         popup.classList.remove("active");
         setTimeout(() => popup.classList.add("hidden"), 300);
         updateButtonState();
@@ -80,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <img src="${flagSrc}" alt="${flagAlt}" class="flag-icon" />
             <span class="country-name-step2">${selectedCountry}</span>
           `;
+          hiddenCountryInput.value = selectedCountry;
           popup.classList.remove("active");
           setTimeout(() => popup.classList.add("hidden"), 300);
           updateButtonState();
@@ -90,9 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   countryForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (!selectedCountry) {
-    } else {
-      sessionStorage.setItem("selectedCountry", selectedCountry);
+    if (selectedCountry) {
+      countryForm.submit();
     }
   });
 
