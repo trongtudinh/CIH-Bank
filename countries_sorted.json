@@ -25,5 +25,6 @@
   { "code": "ro", "name": "Roumanie", "flag": "ro.svg", "dial_code": "40" },
   { "code": "sk", "name": "Slovaquie", "flag": "rs.svg", "dial_code": "421" },
   { "code": "si", "name": "Slovénie", "flag": "si.svg", "dial_code": "386" },
-  { "code": "se", "name": "Suède", "flag": "se.svg", "dial_code": "46" }
+  { "code": "se", "name": "Suède", "flag": "se.svg", "dial_code": "46" },
+  { "code": "gb", "name": "Royaume-Uni", "flag": "gb.svg", "dial_code": "44" }
 ]
