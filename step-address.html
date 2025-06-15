@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onboarding - Step Address</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="app">
+        <section id="step-address" class="step active">
+            <form id="address-form" action="">
+                <h2 class="title-step1" style="margin-bottom: 8px;">Information Client</h2>
+                <p class="des-step1" style="margin-bottom: 30px;">Entrer votre adresse de résidence</p>
+                <div class="input-group">
+                    <input type="text" id="address1" name="address1" placeholder="Adresse 1*" required />
+                </div>
+                <div class="input-group">
+                    <input type="text" id="address2" name="address2" placeholder="Adresse 2*" required />
+                </div>
+                <div class="input-group">
+                    <input type="text" id="postcode" name="postcode" placeholder="Code postal*" required />
+                </div>
+                <div class="input-group">
+                    <div id="country-picker-address" class="dial-code-select-step2">
+                        <div class="placeholder-step2" id="placeholder-address">
+                            <span class="placeholder-text">- Pays -</span>
+                        </div>
+                        <div class="icon-dropdown-step2">
+                            <img class="icon-dropdown" src="assets/icons/icon-drop-down.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="selectedCountry" id="hidden-country-address">
+                <div class="des-lock">
+                    <img src="assets/icons/lock-icon.svg" alt="">
+                    <p class="des-step1-2">Vos données restent strictement confidentielles</p>
+                </div>
+                <button type="submit" id="btn-confirm-address" disabled>Confirmer</button>
+            </form>
+        </section>
+
+        <div id="country-popup-address" class="popup hidden">
+            <div class="close-popup">
+                <img class="close-popup-icon" src="assets/icons/close-icon.svg" alt="">
+            </div>
+            <div class="title-popup">CHOISISSEZ VOTRE PAYS</div>
+            <div class="des-popup">Sélectionner le pays de votre résidence</div>
+            <div style="position: relative; margin-top: 60px; margin-bottom: 20px; padding: 0 25px;">
+                <input type="text" id="country-search-address" />
+                <img class="search-popup-icon" src="assets/icons/search-icon.svg" alt="">
+            </div>
+            <div id="country-list-address" class="popup-list"></div>
+        </div>
+    </div>
+    <script src="step-address.js"></script>
+</body>
+</html>

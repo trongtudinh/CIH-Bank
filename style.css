@@ -427,3 +427,138 @@ button:disabled {
   max-height: calc(100dvh - 175px) !important;
   overflow-y: auto;
 }
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+  font-size: 16px;
+  background: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+  height: 55px;
+  /* Đảm bảo cùng chiều cao với country-picker */
+}
+
+.input-group input[type="text"]:focus {
+  border-color: #e95416;
+  outline: none;
+}
+
+#country-picker-address.dial-code-select-step2 {
+  margin-bottom: 18px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  background: #fff;
+  padding: 0 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+#country-picker-address.dial-code-select-step2:focus-within,
+#country-picker-address.dial-code-select-step2.active {
+  border-color: #e95416;
+}
+
+#country-picker-address .placeholder-step2 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #999;
+}
+
+#country-picker-address .icon-dropdown-step2 {
+  display: flex;
+  align-items: center;
+}
+
+/* STEP ADDRESS CUSTOM DESIGN */
+
+#step-address .title-step1 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+#step-address .des-step1 {
+  font-size: 16px;
+  color: #b0b0b0;
+  text-align: center;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+#step-address .input-group {
+  margin-bottom: 16px;
+}
+
+#step-address input[type="text"]::placeholder {
+  color: #b0b0b0;
+  opacity: 1;
+  font-weight: 400;
+}
+
+#step-address .input-group input[type="text"] {
+  border-radius: 10px;
+  border: 1.5px solid #e5e5e5;
+  font-size: 17px;
+  padding: 16px 14px;
+  background: #fff;
+  font-weight: 400;
+  height: 52px;
+}
+
+#country-picker-address.dial-code-select-step2 {
+  border-radius: 10px;
+  border: 1.5px solid #e5e5e5;
+  height: 52px;
+  padding: 0 14px;
+  margin-bottom: 16px;
+}
+
+#step-address .des-lock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 18px;
+  margin-top: 2px;
+}
+
+#step-address .des-step1-2 {
+  color: #b0b0b0;
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+}
+
+#step-address button#btn-confirm-address {
+  background: #ea5a15;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: 600;
+  height: 48px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  width: 100%;
+  letter-spacing: 0.5px;
+}
+
+#step-address button#btn-confirm-address:disabled {
+  background: #f3b08a;
+  color: #fff;
+}
