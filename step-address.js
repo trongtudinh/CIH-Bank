@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    fetch("countries_sorted.json")
+    fetch("phone_countries_sorted.json")
         .then((res) => res.json())
         .then((data) => {
             countries = data;

@@ -569,3 +569,9 @@ button:disabled {
   background: #f3b08a;
   color: #fff;
 }
+
+.flag-icon {
+  width: 30px;
+  height: 20px;
+  object-fit: contain;
+}
