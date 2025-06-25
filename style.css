@@ -229,6 +229,13 @@ button:disabled {
   gap: 14px;
 }
 
+.country-item-inner img,
+#selected-flag {
+  width: 20px;
+  height: 14px;
+  object-fit: contain;
+}
+
 .country-item-name {
   font-size: 18px;
   font-weight: 600;
