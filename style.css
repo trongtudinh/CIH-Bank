@@ -86,7 +86,6 @@ button:disabled {
 .error {
   background-color: #ffe4e4;
   color: #df6a6a;
-  font-size: 13px;
   border-radius: 5px;
   border: 1px solid #ffbfbf;
   height: 55px;
@@ -180,7 +179,6 @@ button:disabled {
 }
 
 #country-search {
-  border: 1px solid #ccc;
   border-radius: 5px;
   border: 1px solid #e5e5e5;
   height: 55px;
@@ -202,7 +200,7 @@ button:disabled {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 25px;
+  padding: 0 25px;
   height: 65px;
   cursor: pointer;
   border-bottom: 1px solid #e5e5e5;
